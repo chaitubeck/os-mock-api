@@ -1,0 +1,106 @@
+{
+  "status": {
+    "type": "category",
+    "source": "latest_event.type",
+    "mapping": {
+      "fill-pending": "Stopped",
+      "fill-dispensing-held": "On Hold",
+      "fill-verified": "Verified",
+      "fill-scheduled": "Scheduled",
+      "claim-rejected": "Claim Rejected",
+      "claim-reversed": "Claim Reversed",
+      "in-transit": "In Transit",
+      "fill-dispensed": "Dispensed",
+      "delivered": "Delivered",
+      "order-shipped": "Shipped",
+      "benefit-created": "Benefit Created",
+      "clearance-complete": "Cleared",
+      "clearance-no-go": "Clearance Issue",
+      "insurance-change": "Insurance Updated",
+      "claim-paid-and-accepted": "Claim Paid",
+      "rbt-scheduling-exception": "Scheduling Failed",
+      "rejected-claim": "Claim Rejected",
+      "schedule-order-complete": "Scheduled",
+      "renewal-response-approved": "Renewal Approved",
+      "order-entry-complete": "Order Entry Completed",
+      "order-entry-exception": "Order Entry Error",
+      "pending-acr": "On Hold",
+      "pending-clearance": "Pending Review",
+      "prescription-on-hold": "On Hold",
+      "referral-cancelled": "Cancelled",
+      "rta-order-entry-exception": "Order Entry Error",
+      "ingestion-process-complete": "Intake Completed",
+      "manual-intervention-required": "Manual Intervention",
+      "manual-process-completed": "Manual Processed",
+      "new-opportunity-created": "Opportunity Identified",
+      "opportunity-response-received": "Opportunity Responded",
+      "returned": "Returned",
+      "claim-exception": "Claim Error",
+      "claim-response": "Claim Response",
+      "live-claim-exception": "Claim Error",
+      "live-claim-response": "Claim Response",
+      "created": "Created",
+      "fill-cancelled": "Cancelled",
+      "fill-dispensing": "Dispensing",
+      "fill-prescriber-outreach": "Prescriber Outreach",
+      "fill-prescriber-responded": "Prescriber Responded",
+      "pharmacist-review-complete": "Reviewed",
+      "fill-stopped": "Stopped",
+      "scheduled-renewal-cancelled": "Cancelled",
+      "fill-frontend-verified": "Verified",
+      "live-claim-reversal": "Claim Reversed",
+      "live-reversal-exception": "Claim Error",
+      "fill-billing-verified": "Billing Verified",
+      "fill-billing-failed": "Billing Failed",
+      "fill-backend-rejected": "Backend Rejected",
+      "fill-backend-submission-failed": "Backend Submission Failed",
+      "fill-pre-dispense-validation-failed": "Validation Failed",
+      "finalized-pending-push": "Finalized",
+      "prescription-restart-requested": "Restart Requested",
+      "prescription-rework-requested": "Rework Requested"
+    }
+  },
+  "urgency": {
+    "type": "rules",
+    "rules": [
+      {
+        "if": "status in ['Stopped', 'On Hold', 'Claim Rejected', 'Order Entry Error', 'Backend Rejected', 'Billing Failed']",
+        "then": "high"
+      },
+      {
+        "if": "status in ['In Transit', 'Manual Intervention', 'Scheduling Failed']",
+        "then": "normal"
+      },
+      {
+        "default": "low"
+      }
+    ]
+  },
+  "recommended_action": {
+    "type": "template",
+    "template": {
+      "Stopped": "Investigate why the prescription is stopped and contact the patient.",
+      "On Hold": "Resolve hold reasons such as PA, insurance, or clinical review.",
+      "Claim Rejected": "Review rejection reason and initiate resolution with pharmacy.",
+      "Claim Reversed": "Confirm reversal and check if resubmission is needed.",
+      "Claim Error": "Investigate technical issue with claim and reprocess.",
+      "Billing Failed": "Verify the billing error and correct mismatched codes.",
+      "Backend Rejected": "Check backend validation logic or inventory issues.",
+      "Order Entry Error": "Investigate data mismatch or template error in intake.",
+      "Manual Intervention": "A technician should review and take appropriate steps.",
+      "Scheduling Failed": "Retry or reschedule prescription refill communication.",
+      "In Transit": "Monitor shipment and communicate ETA to patient.",
+      "Delivered": "Confirm delivery with patient and log outcome.",
+      "Dispensed": "No further action required.",
+      "Cleared": "Proceed with next step in workflow.",
+      "Renewal Approved": "Proceed with refill or shipping steps.",
+      "Cancelled": "Log reason and confirm with patient or provider.",
+      "Intake Completed": "Move to review or processing stage.",
+      "Finalized": "Push to pharmacy or fulfillment queue.",
+      "Opportunity Responded": "Act on provider's decision regarding drug switch.",
+      "Restart Requested": "Begin intake or review again as requested.",
+      "Rework Requested": "Fix documentation or packaging issues.",
+      "default": "No action needed at this stage."
+    }
+  }
+}

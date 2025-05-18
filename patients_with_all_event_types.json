@@ -1,0 +1,904 @@
+[
+  {
+    "patientId": 1,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "0099793f-948a-4a5f-9f2b-384d6fb0fa31",
+    "shipment": null,
+    "events": [
+      {
+        "type": "schedule-order-complete",
+        "receivedTimestamp": "2025-05-18T23:31:26.327638Z",
+        "resourceId": "448e63bb-9d32-459f-a5c0-3836247ef03e",
+        "comments": "Order Scheduled Soft",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Scheduled Method",
+            "value": "SMS"
+          },
+          {
+            "name": "Confirmed",
+            "value": "Yes"
+          }
+        ]
+      },
+      {
+        "type": "fill-stopped",
+        "receivedTimestamp": "2025-05-17T23:31:26.327647Z",
+        "resourceId": "5bfe6053-54c4-4755-a783-f6b5ac839c98",
+        "comments": "Prescription fill stopped",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Stop Reason",
+            "value": "Patient transfer"
+          },
+          {
+            "name": "Stopped On",
+            "value": "2025-05-17"
+          }
+        ]
+      },
+      {
+        "type": "clearance-no-go",
+        "receivedTimestamp": "2025-05-16T23:31:26.327654Z",
+        "resourceId": "82172e6e-8dc1-42a9-8f6a-0d389a0750f1",
+        "comments": "Adjudication NO GO on the prescription",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Reason",
+            "value": "Coverage expired"
+          },
+          {
+            "name": "Next Action",
+            "value": "Resubmit insurance"
+          }
+        ]
+      },
+      {
+        "type": "fill-billing-failed",
+        "receivedTimestamp": "2025-05-15T23:31:26.327658Z",
+        "resourceId": "f4bc9d0e-117a-4466-9ed8-78222112fc90",
+        "comments": "Prescription bill is failed",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Failure Reason",
+            "value": "Code mismatch"
+          },
+          {
+            "name": "Failed On",
+            "value": "2025-05-16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 2,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "8238e915-8bbe-4a45-bab5-8d1e2242e4ba",
+    "shipment": null,
+    "events": [
+      {
+        "type": "live-claim-reversal",
+        "receivedTimestamp": "2025-05-18T23:31:26.327671Z",
+        "resourceId": "e9bb0c19-2d6c-4386-b70d-4dbb9ca07fbe",
+        "comments": "Live Claim is reversed by ${BillingType} payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Reversal Type",
+            "value": "System"
+          },
+          {
+            "name": "Reason",
+            "value": "Re-bill"
+          }
+        ]
+      },
+      {
+        "type": "rta-order-entry-exception",
+        "receivedTimestamp": "2025-05-17T23:31:26.327676Z",
+        "resourceId": "da5e6316-fc5a-48aa-81e3-6a922753971b",
+        "comments": "Prescription Order Entry Exception",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Reason",
+            "value": "Template mismatch"
+          },
+          {
+            "name": "Action Taken",
+            "value": "Escalated"
+          }
+        ]
+      },
+      {
+        "type": "finalized-pending-push",
+        "receivedTimestamp": "2025-05-16T23:31:26.327679Z",
+        "resourceId": "1fc90ab6-6c34-4b01-83ea-11e129fa3c68",
+        "comments": "Referral Received ${channel}",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Channel",
+            "value": "Fax"
+          },
+          {
+            "name": "Received Date",
+            "value": "2025-05-15"
+          }
+        ]
+      },
+      {
+        "type": "pending-clearance",
+        "receivedTimestamp": "2025-05-15T23:31:26.327683Z",
+        "resourceId": "701f7a44-f664-44d0-869d-0c0868920f22",
+        "comments": "Pending Clearance Review",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Reviewed By",
+            "value": "Technician"
+          },
+          {
+            "name": "Urgency",
+            "value": "High"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 3,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "9b355f47-84d5-4550-b4bb-fc7723a5386e",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-paid-and-accepted",
+        "receivedTimestamp": "2025-05-18T23:31:26.327693Z",
+        "resourceId": "4e20aeec-11a5-4cb6-83ec-c45510c36b71",
+        "comments": "Claim is approved and paid",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Paid Amount",
+            "value": "$128.33"
+          },
+          {
+            "name": "Paid On",
+            "value": "2025-05-15"
+          }
+        ]
+      },
+      {
+        "type": "schedule-order-complete",
+        "receivedTimestamp": "2025-05-17T23:31:26.327697Z",
+        "resourceId": "ee98ad15-339d-4cff-8fcd-b30cbdc0a6a1",
+        "comments": "Prescription Scheduled by Patient",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Scheduled Date",
+            "value": "2025-05-20"
+          },
+          {
+            "name": "Source",
+            "value": "Mobile App"
+          }
+        ]
+      },
+      {
+        "type": "item-in-transit",
+        "receivedTimestamp": "2025-05-16T23:31:26.327701Z",
+        "resourceId": "514f4ae1-fe8a-45b9-a932-6d08f9650329",
+        "comments": "Shipment Item in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Item ID",
+            "value": "RX-ITEM-002"
+          },
+          {
+            "name": "Packaging",
+            "value": "Temperature Controlled"
+          }
+        ]
+      },
+      {
+        "type": "clearance-complete",
+        "receivedTimestamp": "2025-05-15T23:31:26.327705Z",
+        "resourceId": "21c13a3a-aabe-4e1c-8360-e6ed801f1688",
+        "comments": "Clearance is completed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Cleared By",
+            "value": "System"
+          },
+          {
+            "name": "Time to Clear (mins)",
+            "value": "15"
+          }
+        ]
+      },
+      {
+        "type": "fill-backend-submission-failed",
+        "receivedTimestamp": "2025-05-14T23:31:26.327709Z",
+        "resourceId": "61cabb78-d69a-4bee-ab5c-d80b39dbec5f",
+        "comments": "Fulfillment Transmission Error - Backend Submission-Failed",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Error Code",
+            "value": "TXN-902"
+          },
+          {
+            "name": "Resolved",
+            "value": "No"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 4,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "8739edae-9964-4dca-9714-6ce123a0b080",
+    "shipment": null,
+    "events": [
+      {
+        "type": "prescription-restart-requested",
+        "receivedTimestamp": "2025-05-18T23:31:26.327717Z",
+        "resourceId": "759bb4f6-a6b1-4ca9-b8d5-c214f05c53b3",
+        "comments": "Restart requested for prescription",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Requested By",
+            "value": "Support"
+          },
+          {
+            "name": "Reason",
+            "value": "Data correction"
+          }
+        ]
+      },
+      {
+        "type": "live-claim-response",
+        "receivedTimestamp": "2025-05-17T23:31:26.327721Z",
+        "resourceId": "939b3c7e-d1b1-4a2f-a17e-3baec2ceb73a",
+        "comments": "Live Claim is ${ClaimStatus} by ${BillingType} Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Status",
+            "value": "Approved"
+          }
+        ]
+      },
+      {
+        "type": "in-transit",
+        "receivedTimestamp": "2025-05-16T23:31:26.327724Z",
+        "resourceId": "ae17171a-1daa-406c-8218-e437df3be969",
+        "comments": "Shipment in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Shipper",
+            "value": "UPS"
+          },
+          {
+            "name": "Tracking Number",
+            "value": "612244e5-5"
+          },
+          {
+            "name": "Estimated Arrival",
+            "value": "2025-05-22"
+          }
+        ]
+      },
+      {
+        "type": "claim-response",
+        "receivedTimestamp": "2025-05-15T23:31:26.327727Z",
+        "resourceId": "f87fb3c1-e725-41c0-9c04-11c86853fc6e",
+        "comments": "Test Claim is ${ClaimStatus} by ${BillingType} payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "TEST"
+          },
+          {
+            "name": "Status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "type": "manual-intervention-required",
+        "receivedTimestamp": "2025-05-14T23:31:26.327730Z",
+        "resourceId": "efb182d9-c2db-4a3b-bee5-715a961df6b0",
+        "comments": "Prescription Intake process required Manual Intervention",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Trigger",
+            "value": "Unreadable fax"
+          },
+          {
+            "name": "Handled By",
+            "value": "Tech Team"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 5,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "ff65bce0-e0b1-47cf-ab4b-cf62dfa4d9c1",
+    "shipment": null,
+    "events": [
+      {
+        "type": "order-entry-complete",
+        "receivedTimestamp": "2025-05-18T23:31:26.327739Z",
+        "resourceId": "ce9365cf-89aa-4b1b-9e3f-88929e54e63c",
+        "comments": "Order Entry Completed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Order ID",
+            "value": "618d40d5-e7c9-4a05-ae56-a3271ec0073a"
+          },
+          {
+            "name": "Entered By",
+            "value": "System"
+          }
+        ]
+      },
+      {
+        "type": "schedule-order-complete",
+        "receivedTimestamp": "2025-05-17T23:31:26.327742Z",
+        "resourceId": "15889184-ad9a-4d66-90fb-7a2229c338d2",
+        "comments": "Prescription Scheduled by Patient",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Scheduled Date",
+            "value": "2025-05-20"
+          },
+          {
+            "name": "Source",
+            "value": "Mobile App"
+          }
+        ]
+      },
+      {
+        "type": "finalized-pending-push",
+        "receivedTimestamp": "2025-05-16T23:31:26.327745Z",
+        "resourceId": "e4e2402f-0112-4c22-87c4-4c3bb8d11edb",
+        "comments": "Referral Received ${channel}",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Channel",
+            "value": "Fax"
+          },
+          {
+            "name": "Received Date",
+            "value": "2025-05-15"
+          }
+        ]
+      },
+      {
+        "type": "fill-frontend-verified",
+        "receivedTimestamp": "2025-05-15T23:31:26.327748Z",
+        "resourceId": "47d8ee7e-7ebf-4a6e-a01c-6e70526c19e9",
+        "comments": "Prescription fill verified from frontend",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Verification Source",
+            "value": "UI"
+          },
+          {
+            "name": "Verified By",
+            "value": "Patient"
+          }
+        ]
+      },
+      {
+        "type": "order-entry-exception",
+        "receivedTimestamp": "2025-05-14T23:31:26.327751Z",
+        "resourceId": "1daa6ec5-19b9-4dfc-8b8f-aca9619574e1",
+        "comments": "Prescription Order Entry Exception",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Error Type",
+            "value": "Drug mismatch"
+          },
+          {
+            "name": "Resolution",
+            "value": "Pharmacist review"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 6,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "ec8d7b72-1e54-430f-a3b5-2536e281743a",
+    "shipment": null,
+    "events": [
+      {
+        "type": "fill-billing-verified",
+        "receivedTimestamp": "2025-05-18T23:31:26.327758Z",
+        "resourceId": "c08f6994-abb8-4095-87b5-bf865306ce70",
+        "comments": "Prescription bill is verified by the pharmacy",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Verification Result",
+            "value": "Success"
+          },
+          {
+            "name": "Verified On",
+            "value": "2025-05-16"
+          }
+        ]
+      },
+      {
+        "type": "new-opportunity-created",
+        "receivedTimestamp": "2025-05-17T23:31:26.327762Z",
+        "resourceId": "9b0504e5-0e8d-4eef-a301-cce35b090ef4",
+        "comments": "Bio Similar Opportunity found for this Drug",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Alternative Drug",
+            "value": "Adalimumab"
+          },
+          {
+            "name": "Opportunity Type",
+            "value": "Biosimilar"
+          }
+        ]
+      },
+      {
+        "type": "order-entry-exception",
+        "receivedTimestamp": "2025-05-16T23:31:26.327765Z",
+        "resourceId": "6bd59e12-633b-4122-b4d1-e2e0aa51f130",
+        "comments": "Prescription Order Entry Exception",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Error Type",
+            "value": "Drug mismatch"
+          },
+          {
+            "name": "Resolution",
+            "value": "Pharmacist review"
+          }
+        ]
+      },
+      {
+        "type": "claim-exception",
+        "receivedTimestamp": "2025-05-15T23:31:26.327768Z",
+        "resourceId": "5de0efe3-3a9c-4611-8e90-dc414e1d6f28",
+        "comments": "${ClaimType} Claim execution ran into exception",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "TEST"
+          },
+          {
+            "name": "Error",
+            "value": "System Timeout"
+          }
+        ]
+      },
+      {
+        "type": "claim-paid-and-accepted",
+        "receivedTimestamp": "2025-05-14T23:31:26.327771Z",
+        "resourceId": "41135dda-2f5d-4469-a6b8-3f0540daa6e0",
+        "comments": "Claim is approved and paid",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Paid Amount",
+            "value": "$128.33"
+          },
+          {
+            "name": "Paid On",
+            "value": "2025-05-15"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 7,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "bb742fa3-a864-419d-8e69-19fadc118954",
+    "shipment": null,
+    "events": [
+      {
+        "type": "clearance-complete",
+        "receivedTimestamp": "2025-05-18T23:31:26.327778Z",
+        "resourceId": "f89f14b7-34ca-4adb-9927-60413acc91f1",
+        "comments": "Clearance is completed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Cleared By",
+            "value": "System"
+          },
+          {
+            "name": "Time to Clear (mins)",
+            "value": "15"
+          }
+        ]
+      },
+      {
+        "type": "rejected-claim",
+        "receivedTimestamp": "2025-05-17T23:31:26.327782Z",
+        "resourceId": "c317e742-8d07-4a80-b6c7-d9524c51615a",
+        "comments": "Claim is rejected by ${BillingType} payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Code",
+            "value": "75"
+          },
+          {
+            "name": "Status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "type": "pending-clearance",
+        "receivedTimestamp": "2025-05-16T23:31:26.327785Z",
+        "resourceId": "613799ff-71d3-457c-b523-74d1d74a564d",
+        "comments": "Pending Clearance Review",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Reviewed By",
+            "value": "Technician"
+          },
+          {
+            "name": "Urgency",
+            "value": "High"
+          }
+        ]
+      },
+      {
+        "type": "order-entry-complete",
+        "receivedTimestamp": "2025-05-15T23:31:26.327788Z",
+        "resourceId": "d25e0fe8-d9b9-440d-98bf-9ebc7889c2af",
+        "comments": "Order Entry Completed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Order ID",
+            "value": "618d40d5-e7c9-4a05-ae56-a3271ec0073a"
+          },
+          {
+            "name": "Entered By",
+            "value": "System"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 8,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "e5fe1cef-57bd-4add-955d-fd8eed134c80",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-response",
+        "receivedTimestamp": "2025-05-18T23:31:26.327795Z",
+        "resourceId": "9cf5313a-d95c-4fd9-bbd0-0253b7c2be0c",
+        "comments": "Test Claim is ${ClaimStatus} by ${BillingType} payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "TEST"
+          },
+          {
+            "name": "Status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "type": "prescription-restart-requested",
+        "receivedTimestamp": "2025-05-17T23:31:26.327799Z",
+        "resourceId": "2220bf21-4d46-4001-aa3d-71bcedfd423a",
+        "comments": "Restart requested for prescription",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Requested By",
+            "value": "Support"
+          },
+          {
+            "name": "Reason",
+            "value": "Data correction"
+          }
+        ]
+      },
+      {
+        "type": "scheduled-renewal-cancelled",
+        "receivedTimestamp": "2025-05-16T23:31:26.327802Z",
+        "resourceId": "f290a3a1-5be6-45c4-bc65-2ddf83c4a395",
+        "comments": "Renewal Cancelled",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Cancelled Reason",
+            "value": "New Rx Received"
+          },
+          {
+            "name": "Cancelled By",
+            "value": "Automation"
+          }
+        ]
+      },
+      {
+        "type": "schedule-order-complete",
+        "receivedTimestamp": "2025-05-15T23:31:26.327806Z",
+        "resourceId": "25900932-b935-4a01-876e-960fc390e31f",
+        "comments": "Prescription Scheduled by Patient",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Scheduled Date",
+            "value": "2025-05-20"
+          },
+          {
+            "name": "Source",
+            "value": "Mobile App"
+          }
+        ]
+      },
+      {
+        "type": "renewal-response-approved",
+        "receivedTimestamp": "2025-05-14T23:31:26.327809Z",
+        "resourceId": "5027ff91-69e4-4c45-bfed-da089d475cdb",
+        "comments": "Renewal Response Approved by Prescriber",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Prescriber",
+            "value": "Dr. Jane Smith"
+          },
+          {
+            "name": "Response Method",
+            "value": "eFax"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 9,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "d77caf51-43fa-4cf5-8668-a0af4d50bb87",
+    "shipment": null,
+    "events": [
+      {
+        "type": "fill-prescriber-responded",
+        "receivedTimestamp": "2025-05-18T23:31:26.327816Z",
+        "resourceId": "cdeb5b77-5a19-4fc4-84db-4e298a59f3b4",
+        "comments": "Prescriber Responded for the Prescription",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Response Time",
+            "value": "6 hours"
+          },
+          {
+            "name": "Method",
+            "value": "Phone"
+          }
+        ]
+      },
+      {
+        "type": "fill-cancelled",
+        "receivedTimestamp": "2025-05-17T23:31:26.327819Z",
+        "resourceId": "f2249d73-9a4b-4a78-a402-a5477ee5fca7",
+        "comments": "Prescription Fill Cancelled",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Cancelled On",
+            "value": "2025-05-16"
+          },
+          {
+            "name": "Cancelled By",
+            "value": "Pharmacy"
+          }
+        ]
+      },
+      {
+        "type": "pending-acr",
+        "receivedTimestamp": "2025-05-16T23:31:26.327822Z",
+        "resourceId": "1b76ec43-0d7e-496b-9c1d-1aea45e85735",
+        "comments": "Pending Automated Insurance review and Order Entry is on hold",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Hold Reason",
+            "value": "Insurance verification"
+          },
+          {
+            "name": "Expected Duration",
+            "value": "24 hours"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 10,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "44c9d2e3-2bc9-4b84-bf74-aa60a11016bd",
+    "shipment": null,
+    "events": [
+      {
+        "type": "prescription-restart-requested",
+        "receivedTimestamp": "2025-05-18T23:31:26.327829Z",
+        "resourceId": "7a80f597-1127-4a08-9f82-d8e116b78caf",
+        "comments": "Restart requested for prescription",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Requested By",
+            "value": "Support"
+          },
+          {
+            "name": "Reason",
+            "value": "Data correction"
+          }
+        ]
+      },
+      {
+        "type": "in-transit",
+        "receivedTimestamp": "2025-05-17T23:31:26.327832Z",
+        "resourceId": "ba4af675-3c11-4d3f-b556-4b0ab02569e9",
+        "comments": "Shipment in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Shipper",
+            "value": "UPS"
+          },
+          {
+            "name": "Tracking Number",
+            "value": "612244e5-5"
+          },
+          {
+            "name": "Estimated Arrival",
+            "value": "2025-05-22"
+          }
+        ]
+      },
+      {
+        "type": "new-opportunity-created",
+        "receivedTimestamp": "2025-05-16T23:31:26.327836Z",
+        "resourceId": "4bfba2a0-e589-4153-bb5a-6ebd3fd8bcb8",
+        "comments": "Bio Similar Opportunity found for this Drug",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Alternative Drug",
+            "value": "Adalimumab"
+          },
+          {
+            "name": "Opportunity Type",
+            "value": "Biosimilar"
+          }
+        ]
+      },
+      {
+        "type": "benefit-created",
+        "receivedTimestamp": "2025-05-15T23:31:26.327839Z",
+        "resourceId": "ec317896-e6cc-4a8b-88b4-a2ea09c52b7e",
+        "comments": "Benefit for the patient is created",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Benefit Type",
+            "value": "Primary"
+          },
+          {
+            "name": "Insurance Provider",
+            "value": "OptumRX"
+          }
+        ]
+      },
+      {
+        "type": "fill-frontend-verified",
+        "receivedTimestamp": "2025-05-14T23:31:26.327842Z",
+        "resourceId": "7896c270-0967-45c3-98d0-7c1335286644",
+        "comments": "Prescription fill verified from frontend",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Verification Source",
+            "value": "UI"
+          },
+          {
+            "name": "Verified By",
+            "value": "Patient"
+          }
+        ]
+      }
+    ]
+  }
+]

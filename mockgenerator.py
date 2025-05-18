@@ -1,0 +1,265 @@
+import json
+import uuid
+import random
+from datetime import datetime, timezone, timedelta
+
+{"name": "Updated At", "value": datetime.now(timezone.utc).isoformat()}
+
+
+event_templates = [
+    ("Prescription Shipped", "order-shipped", [
+        {"name": "Shipping Carrier", "value": "FedEx"},
+        {"name": "Tracking Number", "value": str(uuid.uuid4())[:12]}
+    ]),
+    ("Benefit for the patient is created", "benefit-created", [
+        {"name": "Benefit Type", "value": "Primary"},
+        {"name": "Insurance Provider", "value": "OptumRX"}
+    ]),
+    ("Clearance is completed", "clearance-complete", [
+        {"name": "Cleared By", "value": "System"},
+        {"name": "Time to Clear (mins)", "value": "15"}
+    ]),
+    ("Adjudication NO GO on the prescription", "clearance-no-go", [
+        {"name": "Reason", "value": "Coverage expired"},
+        {"name": "Next Action", "value": "Resubmit insurance"}
+    ]),
+    ("Insurance change performed", "insurance-change", [
+        {"name": "Old Insurance", "value": "Aetna"},
+        {"name": "New Insurance", "value": "Cigna"}
+    ]),
+    ("Claim is approved and paid", "claim-paid-and-accepted", [
+        {"name": "Paid Amount", "value": "$128.33"},
+        {"name": "Paid On", "value": "2025-05-15"}
+    ]),
+    ("Refill by Text Scheduling failed", "rbt-scheduling-exception", [
+        {"name": "Failure Reason", "value": "Invalid response"},
+        {"name": "Retry Attempts", "value": "2"}
+    ]),
+    ("Claim is rejected by ${BillingType} payor", "rejected-claim", [
+        {"name": "Claim Type", "value": "LIVE"},
+        {"name": "Reject Code", "value": "75"},
+        {"name": "Status", "value": "Rejected"}
+    ]),
+    ("Prescription Scheduled by Patient", "schedule-order-complete", [
+        {"name": "Scheduled Date", "value": "2025-05-20"},
+        {"name": "Source", "value": "Mobile App"}
+    ]),
+    ("Renewal Response Approved by Prescriber", "renewal-response-approved", [
+        {"name": "Prescriber", "value": "Dr. Jane Smith"},
+        {"name": "Response Method", "value": "eFax"}
+    ]),
+    ("Order Entry Completed", "order-entry-complete", [
+        {"name": "Order ID", "value": str(uuid.uuid4())},
+        {"name": "Entered By", "value": "System"}
+    ]),
+    ("Prescription Order Entry Exception", "order-entry-exception", [
+        {"name": "Error Type", "value": "Drug mismatch"},
+        {"name": "Resolution", "value": "Pharmacist review"}
+    ]),
+    ("Pending Automated Insurance review and Order Entry is on hold", "pending-acr", [
+        {"name": "Hold Reason", "value": "Insurance verification"},
+        {"name": "Expected Duration", "value": "24 hours"}
+    ]),
+    ("Pending Clearance Review", "pending-clearance", [
+        {"name": "Reviewed By", "value": "Technician"},
+        {"name": "Urgency", "value": "High"}
+    ]),
+    ("Prescription is on hold - reasons need to be find out", "prescription-on-hold", [
+        {"name": "Hold Type", "value": "Clinical Review"},
+        {"name": "Flag", "value": "Manual"}
+    ]),
+    ("Referral prescription Cancelled", "referral-cancelled", [
+        {"name": "Cancellation Reason", "value": "Patient request"},
+        {"name": "Cancelled By", "value": "Support Staff"}
+    ]),
+    ("Prescription Order Entry Exception", "rta-order-entry-exception", [
+        {"name": "Reason", "value": "Template mismatch"},
+        {"name": "Action Taken", "value": "Escalated"}
+    ]),
+    ("Prescription Intake process completed", "ingestion-process-complete", [
+        {"name": "Processed By", "value": "OCR Automation"},
+        {"name": "Record Count", "value": "1"}
+    ]),
+    ("Prescription Intake process required Manual Intervention", "manual-intervention-required", [
+        {"name": "Trigger", "value": "Unreadable fax"},
+        {"name": "Handled By", "value": "Tech Team"}
+    ]),
+    ("Intake user updated missing information for Rx received", "manual-process-completed", [
+        {"name": "Missing Fields", "value": "DOB, NPI"},
+        {"name": "Updated At", "value": datetime.now(timezone.utc).isoformat()}
+    ]),
+    ("Bio Similar Opportunity found for this Drug", "new-opportunity-created", [
+        {"name": "Alternative Drug", "value": "Adalimumab"},
+        {"name": "Opportunity Type", "value": "Biosimilar"}
+    ]),
+    ("Prescriber Either Approved or Denied the Bio Similar drug change", "opportunity-response-received", [
+        {"name": "Decision", "value": "Approved"},
+        {"name": "Responded On", "value": "2025-05-15"}
+    ]),
+    ("Prescription delivered to Patient", "delivered", [
+        {"name": "Delivery Date", "value": "2025-05-17"},
+        {"name": "Carrier", "value": "UPS"}
+    ]),
+    ("Shipment in transit", "in-transit", [
+        {"name": "Shipper", "value": "UPS"},
+        {"name": "Tracking Number", "value": str(uuid.uuid4())[:10]},
+        {"name": "Estimated Arrival", "value": "2025-05-22"}
+    ]),
+    ("Shipment Item in transit", "item-in-transit", [
+        {"name": "Item ID", "value": "RX-ITEM-002"},
+        {"name": "Packaging", "value": "Temperature Controlled"}
+    ]),
+    ("Prescription Shipment is out for delivery", "out-for-delivery", [
+        {"name": "Out for Delivery On", "value": "2025-05-20"},
+        {"name": "Carrier", "value": "FedEx"}
+    ]),
+    ("Shipment Returned", "returned", [
+        {"name": "Return Reason", "value": "Address not found"},
+        {"name": "Return Processed On", "value": "2025-05-21"}
+    ]),
+    ("${ClaimType} Claim execution ran into exception", "claim-exception", [
+        {"name": "Claim Type", "value": "TEST"},
+        {"name": "Error", "value": "System Timeout"}
+    ]),
+    ("Test Claim is ${ClaimStatus} by ${BillingType} payor", "claim-response", [
+        {"name": "Claim Type", "value": "TEST"},
+        {"name": "Status", "value": "Accepted"}
+    ]),
+    ("Live Claim execution ran into exception", "live-claim-exception", [
+        {"name": "Error", "value": "Connection reset"},
+        {"name": "Retry Count", "value": "2"}
+    ]),
+    ("Live Claim is ${ClaimStatus} by ${BillingType} Payor", "live-claim-response", [
+        {"name": "Claim Type", "value": "LIVE"},
+        {"name": "Status", "value": "Approved"}
+    ]),
+    ("Prescription Created", "created", [
+        {"name": "Created From", "value": "eRx"},
+        {"name": "Entered By", "value": "Prescriber"}
+    ]),
+    ("Prescription Fill Cancelled", "fill-cancelled", [
+        {"name": "Cancelled On", "value": "2025-05-16"},
+        {"name": "Cancelled By", "value": "Pharmacy"}
+    ]),
+    ("Fulfillment Completed - Fill Dispensed", "fill-dispensed", [
+        {"name": "Filled Quantity", "value": "30"},
+        {"name": "Pharmacist", "value": "John D."}
+    ]),
+    ("Fulfillment Transmitted - Fill Dispensing", "fill-dispensing", [
+        {"name": "Transmission Method", "value": "API"},
+        {"name": "Status", "value": "Sent"}
+    ]),
+    ("Fill Prescriber Outreach", "fill-prescriber-outreach", [
+        {"name": "Reason", "value": "Missing Dosage"},
+        {"name": "Contact Method", "value": "Fax"}
+    ]),
+    ("Prescriber Responded for the Prescription", "fill-prescriber-responded", [
+        {"name": "Response Time", "value": "6 hours"},
+        {"name": "Method", "value": "Phone"}
+    ]),
+    ("Pharmacist Review Completed", "pharmacist-review-complete", [
+        {"name": "Review Time", "value": "12 min"},
+        {"name": "Reviewed By", "value": "Pharmacist A"}
+    ]),
+    ("Prescription fill stopped", "fill-stopped", [
+        {"name": "Stop Reason", "value": "Patient transfer"},
+        {"name": "Stopped On", "value": "2025-05-17"}
+    ]),
+    ("Renewal Cancelled", "scheduled-renewal-cancelled", [
+        {"name": "Cancelled Reason", "value": "New Rx Received"},
+        {"name": "Cancelled By", "value": "Automation"}
+    ]),
+    ("Order Scheduled Soft", "schedule-order-complete", [
+        {"name": "Scheduled Method", "value": "SMS"},
+        {"name": "Confirmed", "value": "Yes"}
+    ]),
+    ("Prescription fill verified from frontend", "fill-frontend-verified", [
+        {"name": "Verification Source", "value": "UI"},
+        {"name": "Verified By", "value": "Patient"}
+    ]),
+    ("Live Claim is reversed by ${BillingType} payor", "live-claim-reversal", [
+        {"name": "Reversal Type", "value": "System"},
+        {"name": "Reason", "value": "Re-bill"}
+    ]),
+    ("Live reversal execution ran into exception", "live-reversal-exception", [
+        {"name": "Exception", "value": "401 Unauthorized"},
+        {"name": "Resolution", "value": "Re-authenticate"}
+    ]),
+    ("Prescription bill is verified by the pharmacy", "fill-billing-verified", [
+        {"name": "Verification Result", "value": "Success"},
+        {"name": "Verified On", "value": "2025-05-16"}
+    ]),
+    ("Prescription bill is failed", "fill-billing-failed", [
+        {"name": "Failure Reason", "value": "Code mismatch"},
+        {"name": "Failed On", "value": "2025-05-16"}
+    ]),
+    ("Scheduling Complete", "fill-scheduled", [
+        {"name": "Scheduled Date", "value": "2025-05-19"},
+        {"name": "Reminder Sent", "value": "Yes"}
+    ]),
+    ("Fulfillment Backend - Rejected", "fill-backend-rejected", [
+        {"name": "Backend Reason", "value": "Inventory mismatch"},
+        {"name": "Attempted On", "value": "2025-05-17"}
+    ]),
+    ("Fulfillment Fill-Pending, Backend Cancel", "fill-pending", [
+        {"name": "Status", "value": "Pending Cancel"},
+        {"name": "Note", "value": "Patient called"}
+    ]),
+    ("Fulfillment Transmission Error - Backend Submission-Failed", "fill-backend-submission-failed", [
+        {"name": "Error Code", "value": "TXN-902"},
+        {"name": "Resolved", "value": "No"}
+    ]),
+    ("Fulfillment Hold - Dispensing Ready for Fulfillment", "fill-dispensing-held", [
+        {"name": "Hold Reason", "value": "Pharmacist verification pending"}
+    ]),
+    ("Fulfillment Not Transmitted - Backend Submission-Failed", "fill-pre-dispense-validation-failed", [
+        {"name": "Failure Reason", "value": "Pre-check failed"},
+        {"name": "Checked By", "value": "System"}
+    ]),
+    ("Referral Received ${channel}", "finalized-pending-push", [
+        {"name": "Channel", "value": "Fax"},
+        {"name": "Received Date", "value": "2025-05-15"}
+    ]),
+    ("Restart requested for prescription", "prescription-restart-requested", [
+        {"name": "Requested By", "value": "Support"},
+        {"name": "Reason", "value": "Data correction"}
+    ]),
+    ("Rework requested for prescription", "prescription-rework-requested", [
+        {"name": "Requested By", "value": "QA"},
+        {"name": "Rework Reason", "value": "Label correction"}
+    ])
+]
+
+def generate_event(comment, event_type, additional_info, day_offset):
+    return {
+        "type": event_type,
+        "receivedTimestamp": (datetime.now(timezone.utc) - timedelta(days=day_offset)).isoformat().replace("+00:00", "Z"),
+        "resourceId": str(uuid.uuid4()),
+        "comments": comment,
+        "prefix": "v2:shipment" if "fill-" in event_type or "delivery" in event_type or "shipment" in event_type or "transit" in event_type else "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": additional_info
+    }
+
+def generate_patient_record(patient_id, event_pool):
+    num_events = random.randint(3, 5)
+    selected = random.sample(event_pool, num_events)
+    events = [generate_event(comment, etype, list(info), i) for i, (comment, etype, info) in enumerate(selected)]
+    return {
+        "patientId": patient_id,
+        "prescriptionType": "Mail Live",
+        "prescriptionId": str(uuid.uuid4()),
+        "shipment": None,
+        "events": events
+    }
+
+# Generate data for 10 patients
+patients = [generate_patient_record(i + 1, event_templates) for i in range(10)]
+
+# Save to JSON file
+with open("patients_with_all_event_types.json", "w") as f:
+    json.dump(patients, f, indent=2)
+
+# Print one patient sample
+print(json.dumps(patients[0], indent=2))
+

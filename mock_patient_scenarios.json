@@ -1,0 +1,592 @@
+[
+  {
+    "patientId": 1,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "85881fbc-8580-4e71-94d8-8ad3a418f342",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-16T16:32:22.693544Z",
+        "resourceId": "627dae46-0a34-4112-96c9-32a5ec48f0ab",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "type": "claim-reversed",
+        "receivedTimestamp": "2025-05-15T16:32:22.693544Z",
+        "resourceId": "38c5ab16-37ca-4161-8866-a2f68b719755",
+        "comments": "Live Claim is reversed by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Claim Date of Service",
+            "value": "2025-05-16"
+          },
+          {
+            "name": "Payer ID",
+            "value": "39999"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Reversed"
+          }
+        ]
+      },
+      {
+        "type": "fill-dispensed",
+        "receivedTimestamp": "2025-05-14T16:32:22.693544Z",
+        "resourceId": "283d2b76-7dac-435f-8dc9-b7096470071d",
+        "comments": "Fulfillment Completed - Fill Dispensed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": []
+      }
+    ]
+  },
+  {
+    "patientId": 2,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "31047c7d-b088-471f-ac5a-1b1d7e4de7d9",
+    "shipment": null,
+    "events": [
+      
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-16T16:32:22.693761Z",
+        "resourceId": "4abf9419-3675-4036-85af-07d989ca3063",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 3,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "2b247d7a-0750-408c-b375-75ed53f19c4d",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-11T16:32:22.693840Z",
+        "resourceId": "2dc71818-7d63-4256-bdf3-0349e8877646",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "type": "fill-dispensed",
+        "receivedTimestamp": "2025-05-12T16:32:22.693840Z",
+        "resourceId": "fcd6323b-1467-4acd-90ef-274582cdf6dd",
+        "comments": "Fulfillment Completed - Fill Dispensed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": []
+      },
+      {
+        "type": "claim-reversed",
+        "receivedTimestamp": "2025-05-11T16:32:22.693840Z",
+        "resourceId": "ab712d76-cf2d-4342-8ce8-03986eaa7017",
+        "comments": "Live Claim is reversed by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Claim Date of Service",
+            "value": "2025-05-16"
+          },
+          {
+            "name": "Payer ID",
+            "value": "39999"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Reversed"
+          }
+        ]
+      },
+      {
+        "type": "in-transit",
+        "receivedTimestamp": "2025-05-12T16:32:22.693840Z",
+        "resourceId": "db481d69-21c9-4239-904a-1f69041632e0",
+        "comments": "Shipment was in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Shipper",
+            "value": "UPS"
+          },
+          {
+            "name": "Tracking Number",
+            "value": "5ad502f0-f77"
+          },
+          {
+            "name": "Shipping Method",
+            "value": "UPS Residential Ground"
+          },
+          {
+            "name": "Shipping Address",
+            "value": "570 Jordan Avenue, Robertsshire, NV 85057"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 4,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "abd8e6de-bc1e-4bc6-800d-7ee0830a97e9",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-13T16:32:22.694474Z",
+        "resourceId": "af1eb92b-017e-49e0-9442-406aeb70cfcc",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "type": "in-transit",
+        "receivedTimestamp": "2025-05-13T16:32:22.694474Z",
+        "resourceId": "bbabb9b3-d20c-4837-985d-eeefb179651c",
+        "comments": "Shipment was in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Shipper",
+            "value": "UPS"
+          },
+          {
+            "name": "Tracking Number",
+            "value": "7b71f2cd-bfb"
+          },
+          {
+            "name": "Shipping Method",
+            "value": "UPS Residential Ground"
+          },
+          {
+            "name": "Shipping Address",
+            "value": "374 Lowe Glen, Ashleyside, CA 68307"
+          }
+        ]
+      },
+      {
+        "type": "claim-reversed",
+        "receivedTimestamp": "2025-05-16T16:32:22.694474Z",
+        "resourceId": "2818a0d2-3a91-49aa-8a87-ec20228b7e4c",
+        "comments": "Live Claim is reversed by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Claim Date of Service",
+            "value": "2025-05-16"
+          },
+          {
+            "name": "Payer ID",
+            "value": "39999"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Reversed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 5,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "198dd3af-5d53-46ea-a011-b8c16ea26cfe",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-11T16:32:22.695008Z",
+        "resourceId": "630e9947-5ec8-4dbe-a5af-0038f426b0f3",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "type": "claim-reversed",
+        "receivedTimestamp": "2025-05-14T16:32:22.695008Z",
+        "resourceId": "2a16230c-3081-49d2-b363-3f0d3e916b10",
+        "comments": "Live Claim is reversed by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Claim Date of Service",
+            "value": "2025-05-16"
+          },
+          {
+            "name": "Payer ID",
+            "value": "39999"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Reversed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 6,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "4f9f5681-e2ef-4364-a859-ffe0d9ca3905",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-11T16:32:22.695083Z",
+        "resourceId": "6115e9e5-594c-4815-9eb5-62447e899e89",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "type": "in-transit",
+        "receivedTimestamp": "2025-05-12T16:32:22.695083Z",
+        "resourceId": "ac3dcad1-2acc-4519-9ffa-3450bd4ad23c",
+        "comments": "Shipment was in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Shipper",
+            "value": "UPS"
+          },
+          {
+            "name": "Tracking Number",
+            "value": "9137b3da-f07"
+          },
+          {
+            "name": "Shipping Method",
+            "value": "UPS Residential Ground"
+          },
+          {
+            "name": "Shipping Address",
+            "value": "0975 Gilbert Alley Suite 975, Port Dana, SD 86210"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 7,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "212c0384-2b8c-4987-821b-3de6d5786d53",
+    "shipment": null,
+    "events": [
+      {
+        "type": "in-transit",
+        "receivedTimestamp": "2025-05-12T16:32:22.695469Z",
+        "resourceId": "6226310f-31ba-4528-97cc-22042ac24b76",
+        "comments": "Shipment was in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Shipper",
+            "value": "UPS"
+          },
+          {
+            "name": "Tracking Number",
+            "value": "c99ba613-b81"
+          },
+          {
+            "name": "Shipping Method",
+            "value": "UPS Residential Ground"
+          },
+          {
+            "name": "Shipping Address",
+            "value": "7529 Tran Place Suite 028, Reyesside, NM 73039"
+          }
+        ]
+      },
+      {
+        "type": "rx-hold",
+        "receivedTimestamp": "2025-05-16T16:32:22.695469Z",
+        "resourceId": "870e8a49-12c0-4d08-8da2-ea9f23acec1f",
+        "comments": "Prescription on hold - Refill too soon",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Hold Reason",
+            "value": "REFILL TOO SOON"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 8,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "31892b14-7249-4785-aea7-07a45ab97e59",
+    "shipment": null,
+    "events": [
+      {
+        "type": "rx-hold",
+        "receivedTimestamp": "2025-05-14T16:32:22.695884Z",
+        "resourceId": "6bc10692-7f3d-41e6-898b-cd128c8676d2",
+        "comments": "Prescription on hold - Refill too soon",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Hold Reason",
+            "value": "REFILL TOO SOON"
+          }
+        ]
+      },
+      {
+        "type": "fill-dispensed",
+        "receivedTimestamp": "2025-05-12T16:32:22.695884Z",
+        "resourceId": "83638e95-b1d6-4062-bc73-541e84fcc472",
+        "comments": "Fulfillment Completed - Fill Dispensed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": []
+      },
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-16T16:32:22.695884Z",
+        "resourceId": "9f87299f-8d30-4272-866d-504feda113bc",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 9,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "4a7df058-25cd-4b4a-b6c8-ade8c0605d8b",
+    "shipment": null,
+    "events": [
+      {
+        "type": "in-transit",
+        "receivedTimestamp": "2025-05-13T16:32:22.695954Z",
+        "resourceId": "b5b98f9a-b8f0-42f0-9be4-223374dab768",
+        "comments": "Shipment was in transit",
+        "prefix": "v2:shipment",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Shipper",
+            "value": "UPS"
+          },
+          {
+            "name": "Tracking Number",
+            "value": "fecced6a-a2d"
+          },
+          {
+            "name": "Shipping Method",
+            "value": "UPS Residential Ground"
+          },
+          {
+            "name": "Shipping Address",
+            "value": "2511 Joseph Curve Apt. 144, North Amanda, IA 78306"
+          }
+        ]
+      },
+      {
+        "type": "fill-dispensed",
+        "receivedTimestamp": "2025-05-16T16:32:22.695954Z",
+        "resourceId": "b9df5a0d-ea01-486d-99dd-2cf9bc766d5b",
+        "comments": "Fulfillment Completed - Fill Dispensed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": []
+      },
+      {
+        "type": "claim-rejected",
+        "receivedTimestamp": "2025-05-16T16:32:22.695954Z",
+        "resourceId": "7c81387c-bdef-41d2-873d-4d4f38926a28",
+        "comments": "Live Claim is rejected by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Reject Information",
+            "value": "Reject Codes:75 - Prior Authorization Required"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Rejected"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "patientId": 10,
+    "prescriptionType": "Mail Live",
+    "prescriptionId": "49c9f8f2-ab96-4959-9cea-b3a1206c9c1e",
+    "shipment": null,
+    "events": [
+      {
+        "type": "claim-reversed",
+        "receivedTimestamp": "2025-05-12T16:32:22.696297Z",
+        "resourceId": "995f29e9-4cfd-49b7-94a7-90a6f4f19ce2",
+        "comments": "Live Claim is reversed by Primary Payor",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": [
+          {
+            "name": "Claim Type",
+            "value": "LIVE"
+          },
+          {
+            "name": "Claim Date of Service",
+            "value": "2025-05-16"
+          },
+          {
+            "name": "Payer ID",
+            "value": "39999"
+          },
+          {
+            "name": "Claim Status",
+            "value": "Reversed"
+          }
+        ]
+      },
+      {
+        "type": "fill-dispensed",
+        "receivedTimestamp": "2025-05-12T16:32:22.696297Z",
+        "resourceId": "ce2f646d-cd15-4155-bc61-c083582f415e",
+        "comments": "Fulfillment Completed - Fill Dispensed",
+        "prefix": "v2:prescription",
+        "prescriptionType": "Mail Live",
+        "additionalInfo": []
+      }
+    ]
+  }
+]
