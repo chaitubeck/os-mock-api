@@ -84,7 +84,8 @@ def get_patient_detail(patient_id: int = Query(...)):
     prompt = build_openai_prompt(result)
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        #model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a helpful assistant for doctors."},
             {"role": "user", "content": prompt}
@@ -100,15 +101,27 @@ def get_patient_detail(patient_id: int = Query(...)):
 
 def build_openai_prompt(ragie_result):
     prompt = (
-        "You are a helpful assistant for doctors.\n"
-        "Given the following structured prescription summary:\n\n"
-        f"- Status: {ragie_result['status']}\n"
-        f"- Urgency: {ragie_result['urgency']}\n"
-        f"- Reason: {ragie_result['reason']}\n"
-        f"- Recommended Action: {ragie_result['recommended_action']}\n\n"
-        "Write a 2-line summary a doctor can quickly understand. No technical codes or IDs.\n"
-        "Return only the summary string, not JSON."
-    )
+            "You are a helpful assistant for doctors.\n"
+            "Given the following structured prescription summary, write a 2-line summary a doctor can quickly understand. No technical codes or IDs.\n\n"
+            "Example:\n"
+            "- Status: Billing Failed\n"
+            "- Urgency: High\n"
+            "- Reason: Insurance approved\n"
+            "- Recommended Action: Verify the billing error and correct mismatched codes\n"
+            " Prescription **billing failed** due to a **code mismatch**. Verify and correct the codes for billing to proceed urgently.\n\n"
+            f"- Status: {ragie_result['status']}\n"
+            f"- Urgency: {ragie_result['urgency']}\n"
+            f"- Reason: {ragie_result['reason']}\n"
+            f"- Recommended Action: {ragie_result['recommended_action']}\n"
+        )
+
     return prompt
+
+@app.post("/feedback")
+def receive_feedback(feedback: dict):
+    with open("feedback_log.jsonl", "a") as f:
+        f.write(json.dumps(feedback) + "\n")
+    return {"message": "Feedback received"}
+
 
 
